@@ -1,54 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max - Web Developer</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт Візитка - Max</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="web/max.png" alt="Max Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home" data-lang="en">Home</a><a href="#home" data-lang="de" class="hidden">Startseite</a></li>
-                <li><a href="#services" data-lang="en">Services</a><a href="#services" data-lang="de" class="hidden">Dienstleistungen</a></li>
-                <li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="de" class="hidden">Kontakt</a></li>
-            </ul>
-        </nav>
-        <button id="lang-switch">DE</button>
-    </header>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Max" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#contact">Контакти</a></li>
+        <li><a href="javascript:void(0);" onclick="changeLanguage('uk')">UA</a></li>
+        <li><a href="javascript:void(0);" onclick="changeLanguage('en')">EN</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="home">
-        <h1 data-lang="en">Fast, High-Quality, and Affordable Websites</h1>
-        <h1 data-lang="de" class="hidden">Schnelle, qualitativ hochwertige und preiswerte Websites</h1>
-        <p data-lang="en">I create websites quickly so you can launch and refine them as your business grows.</p>
-        <p data-lang="de" class="hidden">Ich erstelle Websites schnell, damit Sie sie starten und im Laufe der Zeit verbessern können.</p>
-    </section>
+  <section id="about">
+    <h1>Про мене</h1>
+    <p>Привіт! Я — Max, розробник сайтів. Я створюю сайти швидко, якісно та недорого. Моя мета — забезпечити максимальну зручність та функціональність для ваших проєктів.</p>
+  </section>
 
-    <section id="services">
-        <h2 data-lang="en">What I Offer</h2>
-        <h2 data-lang="de" class="hidden">Meine Dienstleistungen</h2>
-        <p data-lang="en">I use ChatGPT to automate routine tasks, focusing on design, readability, and SEO.</p>
-        <p data-lang="de" class="hidden">Ich nutze ChatGPT zur Automatisierung von Routineaufgaben und konzentriere mich auf Design, Lesbarkeit und SEO.</p>
-    </section>
+  <section id="services">
+    <h1>Послуги</h1>
+    <p>Я спеціалізуюсь на створенні сайтів для бізнесу та персональних проектів. Мої основні переваги:</p>
+    <ul>
+      <li>Швидкий запуск сайту</li>
+      <li>Постійна підтримка та оновлення</li>
+      <li>Індивідуальний підхід до кожного проєкту</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-        <h2 data-lang="en">Get in Touch</h2>
-        <h2 data-lang="de" class="hidden">Kontaktieren Sie mich</h2>
-        <p>Email: <a href="mailto:maksymusbtc@gmail.com">maksymusbtc@gmail.com</a></p>
-    </section>
+  <section id="contact">
+    <h1>Контакти</h1>
+    <p>Зв'яжіться зі мною, якщо у вас є запитання або ви хочете почати новий проєкт. Я завжди відкритий до нових ідей!</p>
+    <p>Email: <a href="mailto:maksymusbtc@gmail.com">maksymusbtc@gmail.com</a></p>
+  </section>
 
-    <script>
-        document.getElementById('lang-switch').addEventListener('click', function() {
-            const lang = this.textContent === 'DE' ? 'de' : 'en';
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.classList.toggle('hidden', el.getAttribute('data-lang') !== lang);
-            });
-            this.textContent = lang === 'en' ? 'DE' : 'EN';
-        });
-    </script>
+  <footer>
+    <p>&copy; 2025 Max. Всі права захищені.</p>
+  </footer>
+
+  <script>
+    function changeLanguage(lang) {
+      if (lang === 'uk') {
+        document.documentElement.lang = 'uk';
+        document.querySelector('h1').innerText = 'Про мене';
+        document.querySelector('p').innerText = 'Привіт! Я — Max, розробник сайтів. Я створюю сайти швидко, якісно та недорого. Моя мета — забезпечити максимальну зручність та функціональність для ваших проєктів.';
+      } else {
+        document.documentElement.lang = 'en';
+        document.querySelector('h1').innerText = 'About Me';
+        document.querySelector('p').innerText = 'Hi! I am Max, a web developer. I create websites quickly, efficiently, and at an affordable price. My goal is to ensure maximum convenience and functionality for your projects.';
+      }
+    }
+  </script>
 </body>
 </html>
