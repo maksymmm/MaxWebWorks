@@ -35,6 +35,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            display: inline-block;
         }
 
         nav ul li {
@@ -46,6 +47,23 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .language-selector button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
         }
 
         .hero {
@@ -129,6 +147,34 @@
                 margin-bottom: 20px;
             }
         }
+
+        .more-info {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: left;
+            border-radius: 8px;
+        }
+
+        .more-info p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .show-more-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .show-more-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
     <script>
         function changeLanguage(lang) {
@@ -136,10 +182,11 @@
                 en: {
                     welcome: "Welcome to Max's Web Development",
                     description: "Your go-to developer for fast, quality, and affordable website solutions. I specialize in creating custom websites tailored to your needs. Whether you need a personal portfolio, a business site, or an e-commerce platform, I provide solutions that work for you.",
-                    aboutText: "With years of experience in web development, I have worked with a variety of clients to create beautiful and functional websites. I am committed to providing high-quality websites that are both user-friendly and cost-effective.",
+                    aboutText: "With years of experience in web development, I have worked with a variety of clients to create beautiful and functional websites. I am committed to providing high-quality websites that are both user-friendly and cost-effective. I always strive for excellence and ensure timely delivery.",
                     testimonial1: "Max delivered our project quickly and with excellent quality. Highly recommended!",
                     testimonial2: "The website Max created is just what we needed. Professional and affordable!",
                     testimonial3: "Great experience working with Max. Always available and very responsive!",
+                    testimonial4: "The results exceeded our expectations. I will definitely work with Max again.",
                     contactText: "Have any questions or want to start your project? Get in touch with me!",
                     emailButton: "Send an Email",
                     telegramText: "Or message me on Telegram"
@@ -147,10 +194,11 @@
                 de: {
                     welcome: "Willkommen bei Max' Webentwicklung",
                     description: "Ihr Entwickler für schnelle, qualitativ hochwertige und erschwingliche Webseitenlösungen. Ich spezialisiere mich auf die Erstellung von maßgeschneiderten Websites, die auf Ihre Bedürfnisse abgestimmt sind. Egal, ob Sie ein persönliches Portfolio, eine Unternehmenswebsite oder eine E-Commerce-Plattform benötigen, ich biete Lösungen, die für Sie funktionieren.",
-                    aboutText: "Mit jahrelanger Erfahrung in der Webentwicklung habe ich mit einer Vielzahl von Kunden zusammengearbeitet, um wunderschöne und funktionale Websites zu erstellen. Ich setze mich dafür ein, qualitativ hochwertige Websites zu liefern, die sowohl benutzerfreundlich als auch kostengünstig sind.",
+                    aboutText: "Mit jahrelanger Erfahrung in der Webentwicklung habe ich mit einer Vielzahl von Kunden zusammengearbeitet, um wunderschöne und funktionale Websites zu erstellen. Ich setze mich dafür ein, qualitativ hochwertige Websites zu liefern, die sowohl benutzerfreundlich als auch kostengünstig sind. Ich strebe immer nach Exzellenz und stelle die pünktliche Lieferung sicher.",
                     testimonial1: "Max hat unser Projekt schnell und mit hervorragender Qualität geliefert. Sehr zu empfehlen!",
                     testimonial2: "Die von Max erstellte Website ist genau das, was wir brauchten. Professionell und erschwinglich!",
                     testimonial3: "Tolle Erfahrung mit Max. Immer erreichbar und sehr reaktionsschnell!",
+                    testimonial4: "Die Ergebnisse haben unsere Erwartungen übertroffen. Ich werde definitiv wieder mit Max arbeiten.",
                     contactText: "Haben Sie Fragen oder möchten Sie Ihr Projekt starten? Kontaktieren Sie mich!",
                     emailButton: "E-Mail senden",
                     telegramText: "Oder schreiben Sie mir auf Telegram"
@@ -163,9 +211,15 @@
             document.getElementById("testimonial1").innerText = content[lang].testimonial1;
             document.getElementById("testimonial2").innerText = content[lang].testimonial2;
             document.getElementById("testimonial3").innerText = content[lang].testimonial3;
+            document.getElementById("testimonial4").innerText = content[lang].testimonial4;
             document.getElementById("contactText").innerText = content[lang].contactText;
             document.getElementById("emailButton").innerText = content[lang].emailButton;
             document.getElementById("telegramText").innerText = content[lang].telegramText;
+        }
+
+        function toggleMoreInfo() {
+            const moreInfo = document.getElementById("more-info");
+            moreInfo.style.display = moreInfo.style.display === "block" ? "none" : "block";
         }
     </script>
 </head>
@@ -182,6 +236,10 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="language-selector">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('de')">Deutsch</button>
+        </div>
     </header>
 
     <div class="hero">
@@ -192,22 +250,30 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p id="aboutText">With years of experience in web development, I have worked with a variety of clients to create beautiful and functional websites. I am committed to providing high-quality websites that are both user-friendly and cost-effective.</p>
+        <p id="aboutText">With years of experience in web development, I have worked with a variety of clients to create beautiful and functional websites. I am committed to providing high-quality websites that are both user-friendly and cost-effective. I always strive for excellence and ensure timely delivery.</p>
+        <button class="show-more-btn" onclick="toggleMoreInfo()">Show More</button>
+        <div id="more-info" class="more-info">
+            <p>Here you can read more about my background and approach to web development. I focus on building responsive and dynamic websites, ensuring that every project I take on exceeds the client's expectations. I have experience working with diverse technologies and frameworks, and I believe in providing the best solution tailored specifically for each project.</p>
+        </div>
     </section>
 
     <section id="testimonials" class="testimonials">
         <h2>What My Clients Say</h2>
         <div class="testimonial-card">
-            <h3>John Doe</h3>
+            <h3>John Schmidt</h3>
             <p id="testimonial1">Max delivered our project quickly and with excellent quality. Highly recommended!</p>
         </div>
         <div class="testimonial-card">
-            <h3>Jane Smith</h3>
+            <h3>Jane Müller</h3>
             <p id="testimonial2">The website Max created is just what we needed. Professional and affordable!</p>
         </div>
         <div class="testimonial-card">
-            <h3>Michael Brown</h3>
+            <h3>Michael Weber</h3>
             <p id="testimonial3">Great experience working with Max. Always available and very responsive!</p>
+        </div>
+        <div class="testimonial-card">
+            <h3>Anna Fischer</h3>
+            <p id="testimonial4">The results exceeded our expectations. I will definitely work with Max again.</p>
         </div>
     </section>
 
@@ -219,4 +285,7 @@
     </section>
 
     <footer>
-        <p>&copy; 
+        <p>&copy; 2025 Max - All Rights Reserved | <a href="mailto:maksymusbtc@gmail.com">Email</a> | <a href="https://t.me/Sulyma126" target="_blank">Telegram</a></p>
+    </footer>
+</body>
+</html>
