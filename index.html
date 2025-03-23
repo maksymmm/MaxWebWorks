@@ -26,6 +26,7 @@
             background-color: #333;
             color: #fff;
             padding: 20px 0;
+            position: relative;
         }
 
         .logo img {
@@ -48,49 +49,89 @@
             font-weight: bold;
         }
 
-        button {
+        /* Головна секція */
+        .hero {
             background-color: #007bff;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 10px;
+            padding: 80px 20px;
+            text-align: center;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .hero h1 {
+            font-size: 2.5em;
         }
 
-        .language-buttons {
-            margin-top: 20px;
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        /* Відгуки клієнтів */
+        .testimonials {
+            background-color: #f8f8f8;
+            padding: 50px 20px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 28%;
+        }
+
+        .testimonial-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Контактна секція */
+        #contact {
+            padding: 50px 20px;
+            background-color: #333;
+            color: white;
         }
 
         .contact-btn {
             background-color: #28a745;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
         .contact-btn:hover {
             background-color: #218838;
         }
 
-        a {
-            color: #007bff;
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #fff;
             text-decoration: none;
         }
 
-        a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
 
-        .content {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
+        /* Мобільні стилі */
         @media (max-width: 768px) {
-            .content {
-                padding: 30px 10px;
+            .testimonial-card {
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -100,27 +141,33 @@
                 en: {
                     welcome: "Welcome to Max's Web Development",
                     description: "Your go-to developer for fast, quality, and affordable website solutions.",
-                    about: "I specialize in creating clean, user-friendly websites that load quickly and perform well across all devices. Whether you're looking for a simple website or a complex online presence, I offer solutions that fit your needs. With years of experience in the field, I can help you design and develop a website that is not only functional but also visually appealing.",
                     contactText: "Have any questions or want to start your project? Get in touch with me!",
                     emailButton: "Send an Email",
-                    telegramText: "Or message me on Telegram"
+                    telegramText: "Or message me on Telegram",
+                    testimonial1: "Max delivered our project quickly and with excellent quality. Highly recommended!",
+                    testimonial2: "The website Max created is just what we needed. Professional and affordable!",
+                    testimonial3: "Great experience working with Max. Always available and very responsive!"
                 },
                 de: {
                     welcome: "Willkommen bei Max' Webentwicklung",
                     description: "Ihr Entwickler für schnelle, qualitativ hochwertige und erschwingliche Webseiten.",
-                    about: "Ich spezialisiere mich auf die Erstellung von sauberen, benutzerfreundlichen Webseiten, die schnell laden und auf allen Geräten gut funktionieren. Egal, ob Sie eine einfache Webseite oder eine komplexe Online-Präsenz benötigen, ich biete Lösungen, die zu Ihren Bedürfnissen passen. Mit jahrelanger Erfahrung auf diesem Gebiet helfe ich Ihnen, eine Webseite zu entwerfen und zu entwickeln, die nicht nur funktional, sondern auch visuell ansprechend ist.",
                     contactText: "Haben Sie Fragen oder möchten Sie Ihr Projekt starten? Kontaktieren Sie mich!",
                     emailButton: "E-Mail senden",
-                    telegramText: "Oder schreiben Sie mir auf Telegram"
+                    telegramText: "Oder schreiben Sie mir auf Telegram",
+                    testimonial1: "Max hat unser Projekt schnell und mit hervorragender Qualität geliefert. Sehr zu empfehlen!",
+                    testimonial2: "Die von Max erstellte Website ist genau das, was wir brauchten. Professionell und erschwinglich!",
+                    testimonial3: "Tolle Erfahrung mit Max. Immer erreichbar und sehr reaktionsschnell!"
                 }
             };
 
             document.getElementById("welcome").innerText = content[lang].welcome;
             document.getElementById("description").innerText = content[lang].description;
-            document.getElementById("about").innerText = content[lang].about;
             document.getElementById("contactText").innerText = content[lang].contactText;
             document.getElementById("emailButton").innerText = content[lang].emailButton;
             document.getElementById("telegramText").innerText = content[lang].telegramText;
+            document.getElementById("testimonial1").innerText = content[lang].testimonial1;
+            document.getElementById("testimonial2").innerText = content[lang].testimonial2;
+            document.getElementById("testimonial3").innerText = content[lang].testimonial3;
         }
     </script>
 </head>
@@ -132,28 +179,27 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="language-buttons">
-        <button onclick="changeLanguage('en')">English</button>
-        <button onclick="changeLanguage('de')">Deutsch</button>
-    </div>
-
-    <!-- Контент -->
-    <div class="content">
+    <div class="hero">
         <h1 id="welcome">Welcome to Max's Web Development</h1>
         <p id="description">Your go-to developer for fast, quality, and affordable website solutions.</p>
-        <p id="about">I specialize in creating clean, user-friendly websites that load quickly and perform well across all devices. Whether you're looking for a simple website or a complex online presence, I offer solutions that fit your needs. With years of experience in the field, I can help you design and develop a website that is not only functional but also visually appealing.</p>
+        <button class="contact-btn" onclick="window.location.href = 'mailto:maksymusbtc@gmail.com';">Contact Me</button>
     </div>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p id="contactText">Have any questions or want to start your project? Get in touch with me!</p>
-        <button id="emailButton" class="contact-btn" onclick="window.location.href = 'mailto:maksymusbtc@gmail.com';">Send an Email</button>
-        <p><span id="telegramText">Or message me on Telegram</span> <a href="https://t.me/Sulyma126" target="_blank">@Sulyma126</a></p>
-    </section>
-</body>
-</html>
+    <section id="testimonials" class="testimonials">
+        <h2>What My Clients Say</h2>
+        <div class="testimonial-card">
+            <h3>John Doe</h3>
+            <p id="testimonial1">Max delivered our project quickly and with excellent quality. Highly recommended!</p>
+        </div>
+        <div class="testimonial-card">
+            <h3>Jane Smith</h3>
+            <p id="testimonial2">The website Max created is just what we needed. Professional and affordable!</p>
+        </div>
+        <div class="testimonial-card
