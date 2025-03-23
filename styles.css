@@ -1,101 +1,154 @@
-/* Загальні стилі для сайту */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="wtKrwq_fL-SoIS1tKzpfZq6_0j_AomY8agKD9AqMa2U" />
+    <title>Max - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Загальні стилі для сайту */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-/* Стилі для заголовка */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-header .logo img {
-  max-width: 120px; /* Зменшення розміру логотипу */
-}
+        header .logo img {
+            max-width: 150px;
+        }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-}
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
 
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-nav ul li a:hover {
-  text-decoration: underline;
-}
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
 
-.language-switcher {
-  margin-top: 20px;
-}
+        button:hover {
+            background-color: #0056b3;
+        }
 
-.language-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-  margin-left: 10px;
-}
+        .hidden {
+            display: none;
+        }
 
-.language-btn:hover {
-  background-color: #0056b3;
-}
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
 
-/* Стилі для секцій */
-section {
-  padding: 40px 20px;
-  text-align: center;
-  margin: 20px 0;
-}
+        section h1, section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-section h1, section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
+        section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
 
-section p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
 
-/* Стилі для адаптивності */
-@media (max-width: 768px) {
-  header {
-    padding: 10px 0;
-  }
+        a:hover {
+            text-decoration: underline;
+        }
 
-  section h1, section h2 {
-    font-size: 2rem;
-  }
+        /* Стилі для адаптивності */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
 
-  section p {
-    font-size: 1rem;
-  }
+            section h1, section h2 {
+                font-size: 2rem;
+            }
 
-  button {
-    padding: 8px 16px;
-  }
-}
+            section p {
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Логотип -->
+            <img src="web/max.png" alt="Max">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h1>Welcome to Max's Web Development</h1>
+        <p>Your go-to developer for fast, quality, and affordable website solutions.</p>
+        <p>We create modern websites with great designs, SEO optimization, and a focus on usability. Let's get started on your project today!</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of web development services including:</p>
+        <ul>
+            <li>Custom Website Design</li>
+            <li>E-commerce Development</li>
+            <li>SEO Optimization</li>
+            <li>Responsive Design</li>
+            <li>Content Management Systems</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have any questions or want to start your project? Get in touch with me!</p>
+        <button onclick="window.location.href = 'mailto:maksymusbtc@gmail.com';">Send an Email</button>
+        <p>Or message me on <a href="https://t.me/Sulyma126" target="_blank">Telegram</a></p>
+    </section>
+</body>
+</html>
