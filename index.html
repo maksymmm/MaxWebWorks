@@ -13,78 +13,69 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#about" class="nav-link" data-section="about">Про мене</a></li>
-        <li><a href="#services" class="nav-link" data-section="services">Послуги</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Контакти</a></li>
-        <li><button class="language-btn" onclick="changeLanguage('en')">EN</button></li>
-        <li><button class="language-btn" onclick="changeLanguage('de')">DE</button></li>
+        <li><a href="#about" class="nav-link">Про мене</a></li>
+        <li><a href="#services" class="nav-link">Послуги</a></li>
+        <li><a href="#contact" class="nav-link">Контакти</a></li>
       </ul>
+      <div class="language-switcher">
+        <button class="language-btn" onclick="changeLanguage('en')">EN</button>
+        <button class="language-btn" onclick="changeLanguage('de')">DE</button>
+      </div>
     </nav>
   </header>
 
   <section id="about">
-    <h1 data-lang="about-heading">Про мене</h1>
-    <p data-lang="about-text">Привіт! Я — Max, розробник сайтів. Я створюю сайти швидко, якісно та недорого. Моя мета — забезпечити максимальну зручність та функціональність для ваших проєктів.</p>
+    <h1 data-lang="about-heading-en" class="lang-en">About Me</h1>
+    <h1 data-lang="about-heading-de" class="lang-de">Über mich</h1>
+    <p data-lang="about-text-en" class="lang-en">Hi! I am Max, a web developer. I create websites quickly, efficiently, and at an affordable price.</p>
+    <p data-lang="about-text-de" class="lang-de">Hallo! Ich bin Max, ein Webentwickler. Ich erstelle Websites schnell, effizient und zu einem erschwinglichen Preis.</p>
   </section>
 
   <section id="services">
-    <h1 data-lang="services-heading">Послуги</h1>
-    <p data-lang="services-text">Я спеціалізуюсь на створенні сайтів для бізнесу та персональних проектів. Мої основні переваги:</p>
+    <h1 data-lang="services-heading-en" class="lang-en">Services</h1>
+    <h1 data-lang="services-heading-de" class="lang-de">Dienstleistungen</h1>
+    <p data-lang="services-text-en" class="lang-en">I specialize in creating websites for businesses and personal projects. My main advantages are:</p>
+    <p data-lang="services-text-de" class="lang-de">Ich spezialisiere mich auf die Erstellung von Websites für Unternehmen und persönliche Projekte. Meine Hauptvorteile sind:</p>
     <ul>
-      <li data-lang="service-1">Швидкий запуск сайту</li>
-      <li data-lang="service-2">Постійна підтримка та оновлення</li>
-      <li data-lang="service-3">Індивідуальний підхід до кожного проєкту</li>
+      <li data-lang="service-1-en" class="lang-en">Quick website launch</li>
+      <li data-lang="service-1-de" class="lang-de">Schneller Website-Start</li>
+      <li data-lang="service-2-en" class="lang-en">Ongoing support and updates</li>
+      <li data-lang="service-2-de" class="lang-de">Laufende Unterstützung und Updates</li>
+      <li data-lang="service-3-en" class="lang-en">Individual approach to each project</li>
+      <li data-lang="service-3-de" class="lang-de">Individuelle Herangehensweise an jedes Projekt</li>
     </ul>
   </section>
 
   <section id="contact">
-    <h1 data-lang="contact-heading">Контакти</h1>
-    <p data-lang="contact-text">Зв'яжіться зі мною, якщо у вас є запитання або ви хочете почати новий проєкт. Я завжди відкритий до нових ідей!</p>
+    <h1 data-lang="contact-heading-en" class="lang-en">Contact</h1>
+    <h1 data-lang="contact-heading-de" class="lang-de">Kontakt</h1>
+    <p data-lang="contact-text-en" class="lang-en">Contact me if you have any questions or want to start a new project. I am always open to new ideas!</p>
+    <p data-lang="contact-text-de" class="lang-de">Kontaktieren Sie mich, wenn Sie Fragen haben oder ein neues Projekt starten möchten. Ich bin immer offen für neue Ideen!</p>
     <p>Email: <a href="mailto:maksymusbtc@gmail.com">maksymusbtc@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Max. Всі права захищені.</p>
+    <p>&copy; 2025 Max. All rights reserved.</p>
   </footer>
 
   <script>
-    const translations = {
-      "en": {
-        "about-heading": "About Me",
-        "about-text": "Hi! I am Max, a web developer. I create websites quickly, efficiently, and at an affordable price. My goal is to ensure maximum convenience and functionality for your projects.",
-        "services-heading": "Services",
-        "services-text": "I specialize in creating websites for businesses and personal projects. My main advantages are:",
-        "service-1": "Quick website launch",
-        "service-2": "Ongoing support and updates",
-        "service-3": "Individual approach to each project",
-        "contact-heading": "Contact",
-        "contact-text": "Contact me if you have any questions or want to start a new project. I am always open to new ideas!"
-      },
-      "de": {
-        "about-heading": "Über mich",
-        "about-text": "Hallo! Ich bin Max, ein Webentwickler. Ich erstelle Websites schnell, effizient und zu einem erschwinglichen Preis. Mein Ziel ist es, maximalen Komfort und Funktionalität für Ihre Projekte zu gewährleisten.",
-        "services-heading": "Dienstleistungen",
-        "services-text": "Ich spezialisiere mich auf die Erstellung von Websites für Unternehmen und persönliche Projekte. Meine Hauptvorteile sind:",
-        "service-1": "Schneller Website-Start",
-        "service-2": "Laufende Unterstützung und Updates",
-        "service-3": "Individuelle Herangehensweise an jedes Projekt",
-        "contact-heading": "Kontakt",
-        "contact-text": "Kontaktieren Sie mich, wenn Sie Fragen haben oder ein neues Projekt starten möchten. Ich bin immer offen für neue Ideen!"
-      }
-    };
-
     function changeLanguage(lang) {
-      const elements = document.querySelectorAll('[data-lang]');
-      elements.forEach(el => {
-        const key = el.getAttribute('data-lang');
-        el.innerText = translations[lang][key] || el.innerText;
-      });
-
-      // Change button styles to active
-      const buttons = document.querySelectorAll('.language-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`button[onclick="changeLanguage('${lang}')"]`).classList.add('active');
+      const langElementsEn = document.querySelectorAll('.lang-en');
+      const langElementsDe = document.querySelectorAll('.lang-de');
+      
+      if (lang === 'en') {
+        langElementsEn.forEach(el => el.style.display = 'block');
+        langElementsDe.forEach(el => el.style.display = 'none');
+      } else if (lang === 'de') {
+        langElementsEn.forEach(el => el.style.display = 'none');
+        langElementsDe.forEach(el => el.style.display = 'block');
+      }
     }
+
+    // Default language is English
+    changeLanguage('en');
   </script>
 </body>
 </html>
+
+    
