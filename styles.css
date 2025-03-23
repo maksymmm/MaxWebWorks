@@ -44,7 +44,10 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Стилі для кнопок перемикання мови */
+.language-switcher {
+  margin-top: 20px;
+}
+
 .language-btn {
   background-color: #007bff;
   color: white;
@@ -54,14 +57,11 @@ nav ul li a:hover {
   font-size: 16px;
   margin-top: 10px;
   transition: background-color 0.3s ease;
+  margin-left: 10px;
 }
 
 .language-btn:hover {
   background-color: #0056b3;
-}
-
-.language-btn.active {
-  background-color: #0056b3; /* Активна кнопка */
 }
 
 /* Стилі для секцій */
