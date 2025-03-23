@@ -7,7 +7,7 @@
     <title>Max - Web Developer</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Загальні стилі для сайту */
+        /* Загальні стилі */
         * {
             margin: 0;
             padding: 0;
@@ -19,17 +19,21 @@
             line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
+            text-align: center;
         }
 
         header {
             background-color: #333;
             color: #fff;
             padding: 20px 0;
-            text-align: center;
         }
 
-        header .logo img {
+        .logo img {
             max-width: 150px;
+        }
+
+        nav {
+            margin-top: 10px;
         }
 
         nav ul {
@@ -48,6 +52,10 @@
             font-weight: bold;
         }
 
+        section {
+            padding: 40px 20px;
+        }
+
         button {
             background-color: #007bff;
             color: white;
@@ -55,31 +63,23 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
-            margin-top: 10px;
+            margin: 10px;
         }
 
         button:hover {
             background-color: #0056b3;
         }
 
-        .hidden {
-            display: none;
+        .language-buttons {
+            margin-top: 20px;
         }
 
-        section {
-            padding: 40px 20px;
-            text-align: center;
-            margin: 20px 0;
+        .contact-btn {
+            background-color: #28a745;
         }
 
-        section h1, section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+        .contact-btn:hover {
+            background-color: #218838;
         }
 
         a {
@@ -91,18 +91,9 @@
             text-decoration: underline;
         }
 
-        /* Стилі для адаптивності */
         @media (max-width: 768px) {
-            header {
-                padding: 10px 0;
-            }
-
-            section h1, section h2 {
-                font-size: 2rem;
-            }
-
-            section p {
-                font-size: 1rem;
+            section {
+                padding: 20px;
             }
 
             button {
@@ -110,32 +101,91 @@
             }
         }
     </style>
+    <script>
+        function changeLanguage(lang) {
+            const content = {
+                en: {
+                    welcome: "Welcome to Max's Web Development",
+                    description: "Your go-to developer for fast, quality, and affordable website solutions.",
+                    servicesTitle: "Our Services",
+                    servicesList: [
+                        "Custom Website Design",
+                        "E-commerce Development",
+                        "SEO Optimization",
+                        "Responsive Design",
+                        "Content Management Systems"
+                    ],
+                    contactTitle: "Contact Me",
+                    contactText: "Have any questions or want to start your project? Get in touch with me!",
+                    emailButton: "Send an Email",
+                    telegramText: "Or message me on",
+                    about: "About",
+                    services: "Services",
+                    contact: "Contact"
+                },
+                de: {
+                    welcome: "Willkommen bei Max' Webentwicklung",
+                    description: "Ihr Entwickler für schnelle, qualitativ hochwertige und erschwingliche Webseiten.",
+                    servicesTitle: "Unsere Dienstleistungen",
+                    servicesList: [
+                        "Individuelles Webdesign",
+                        "E-Commerce-Entwicklung",
+                        "SEO-Optimierung",
+                        "Responsives Design",
+                        "Content-Management-Systeme"
+                    ],
+                    contactTitle: "Kontakt",
+                    contactText: "Haben Sie Fragen oder möchten Sie Ihr Projekt starten? Kontaktieren Sie mich!",
+                    emailButton: "E-Mail senden",
+                    telegramText: "Oder schreiben Sie mir auf",
+                    about: "Über mich",
+                    services: "Dienstleistungen",
+                    contact: "Kontakt"
+                }
+            };
+
+            document.getElementById("welcome").innerText = content[lang].welcome;
+            document.getElementById("description").innerText = content[lang].description;
+            document.getElementById("servicesTitle").innerText = content[lang].servicesTitle;
+            document.getElementById("servicesList").innerHTML = content[lang].servicesList.map(item => `<li>${item}</li>`).join('');
+            document.getElementById("contactTitle").innerText = content[lang].contactTitle;
+            document.getElementById("contactText").innerText = content[lang].contactText;
+            document.getElementById("emailButton").innerText = content[lang].emailButton;
+            document.getElementById("telegramText").innerText = content[lang].telegramText;
+
+            document.getElementById("nav-about").innerText = content[lang].about;
+            document.getElementById("nav-services").innerText = content[lang].services;
+            document.getElementById("nav-contact").innerText = content[lang].contact;
+        }
+    </script>
 </head>
-<body>
+<body onload="changeLanguage('en')">
     <header>
         <div class="logo">
-            <!-- Логотип -->
             <img src="web/max.png" alt="Max">
         </div>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a id="nav-about" href="#about">About</a></li>
+                <li><a id="nav-services" href="#services">Services</a></li>
+                <li><a id="nav-contact" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <div class="language-buttons">
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('de')">Deutsch</button>
+    </div>
+
     <section id="about">
-        <h1>Welcome to Max's Web Development</h1>
-        <p>Your go-to developer for fast, quality, and affordable website solutions.</p>
-        <p>We create modern websites with great designs, SEO optimization, and a focus on usability. Let's get started on your project today!</p>
+        <h1 id="welcome">Welcome to Max's Web Development</h1>
+        <p id="description">Your go-to developer for fast, quality, and affordable website solutions.</p>
     </section>
 
     <section id="services">
-        <h2>Our Services</h2>
-        <p>We offer a wide range of web development services including:</p>
-        <ul>
+        <h2 id="servicesTitle">Our Services</h2>
+        <ul id="servicesList">
             <li>Custom Website Design</li>
             <li>E-commerce Development</li>
             <li>SEO Optimization</li>
@@ -145,10 +195,10 @@
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Have any questions or want to start your project? Get in touch with me!</p>
-        <button onclick="window.location.href = 'mailto:maksymusbtc@gmail.com';">Send an Email</button>
-        <p>Or message me on <a href="https://t.me/Sulyma126" target="_blank">Telegram</a></p>
+        <h2 id="contactTitle">Contact Me</h2>
+        <p id="contactText">Have any questions or want to start your project? Get in touch with me!</p>
+        <button id="emailButton" class="contact-btn" onclick="window.location.href = 'mailto:maksymusbtc@gmail.com';">Send an Email</button>
+        <p><span id="telegramText">Or message me on</span> <a href="https://t.me/Sulyma126" target="_blank">Telegram</a></p>
     </section>
 </body>
 </html>
