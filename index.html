@@ -1,81 +1,154 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайт Візитка - Max</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="wtKrwq_fL-SoIS1tKzpfZq6_0j_AomY8agKD9AqMa2U" />
+    <title>Max - Web Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Загальні стилі для сайту */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header .logo img {
+            max-width: 150px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        section h1, section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Стилі для адаптивності */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+
+            section h1, section h2 {
+                font-size: 2rem;
+            }
+
+            section p {
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 8px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Max" />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#about" class="nav-link">Про мене</a></li>
-        <li><a href="#services" class="nav-link">Послуги</a></li>
-        <li><a href="#contact" class="nav-link">Контакти</a></li>
-      </ul>
-      <div class="language-switcher">
-        <button class="language-btn" onclick="changeLanguage('en')">EN</button>
-        <button class="language-btn" onclick="changeLanguage('de')">DE</button>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">
+            <!-- Логотип -->
+            <img src="web/max.png" alt="Max">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="about">
-    <h1 data-lang="about-heading-en" class="lang-en">About Me</h1>
-    <h1 data-lang="about-heading-de" class="lang-de">Über mich</h1>
-    <p data-lang="about-text-en" class="lang-en">Hi! I am Max, a web developer. I create websites quickly, efficiently, and at an affordable price.</p>
-    <p data-lang="about-text-de" class="lang-de">Hallo! Ich bin Max, ein Webentwickler. Ich erstelle Websites schnell, effizient und zu einem erschwinglichen Preis.</p>
-  </section>
+    <section id="about">
+        <h1>Welcome to Max's Web Development</h1>
+        <p>Your go-to developer for fast, quality, and affordable website solutions.</p>
+        <p>We create modern websites with great designs, SEO optimization, and a focus on usability. Let's get started on your project today!</p>
+    </section>
 
-  <section id="services">
-    <h1 data-lang="services-heading-en" class="lang-en">Services</h1>
-    <h1 data-lang="services-heading-de" class="lang-de">Dienstleistungen</h1>
-    <p data-lang="services-text-en" class="lang-en">I specialize in creating websites for businesses and personal projects. My main advantages are:</p>
-    <p data-lang="services-text-de" class="lang-de">Ich spezialisiere mich auf die Erstellung von Websites für Unternehmen und persönliche Projekte. Meine Hauptvorteile sind:</p>
-    <ul>
-      <li data-lang="service-1-en" class="lang-en">Quick website launch</li>
-      <li data-lang="service-1-de" class="lang-de">Schneller Website-Start</li>
-      <li data-lang="service-2-en" class="lang-en">Ongoing support and updates</li>
-      <li data-lang="service-2-de" class="lang-de">Laufende Unterstützung und Updates</li>
-      <li data-lang="service-3-en" class="lang-en">Individual approach to each project</li>
-      <li data-lang="service-3-de" class="lang-de">Individuelle Herangehensweise an jedes Projekt</li>
-    </ul>
-  </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of web development services including:</p>
+        <ul>
+            <li>Custom Website Design</li>
+            <li>E-commerce Development</li>
+            <li>SEO Optimization</li>
+            <li>Responsive Design</li>
+            <li>Content Management Systems</li>
+        </ul>
+    </section>
 
-  <section id="contact">
-    <h1 data-lang="contact-heading-en" class="lang-en">Contact</h1>
-    <h1 data-lang="contact-heading-de" class="lang-de">Kontakt</h1>
-    <p data-lang="contact-text-en" class="lang-en">Contact me if you have any questions or want to start a new project. I am always open to new ideas!</p>
-    <p data-lang="contact-text-de" class="lang-de">Kontaktieren Sie mich, wenn Sie Fragen haben oder ein neues Projekt starten möchten. Ich bin immer offen für neue Ideen!</p>
-    <p>Email: <a href="mailto:maksymusbtc@gmail.com">maksymusbtc@gmail.com</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Max. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function changeLanguage(lang) {
-      const langElementsEn = document.querySelectorAll('.lang-en');
-      const langElementsDe = document.querySelectorAll('.lang-de');
-      
-      if (lang === 'en') {
-        langElementsEn.forEach(el => el.style.display = 'block');
-        langElementsDe.forEach(el => el.style.display = 'none');
-      } else if (lang === 'de') {
-        langElementsEn.forEach(el => el.style.display = 'none');
-        langElementsDe.forEach(el => el.style.display = 'block');
-      }
-    }
-
-    // Default language is English
-    changeLanguage('en');
-  </script>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have any questions or want to start your project? Get in touch with me!</p>
+        <button onclick="window.location.href = 'mailto:maksymusbtc@gmail.com';">Send an Email</button>
+        <p>Or message me on <a href="https://t.me/Sulyma126" target="_blank">Telegram</a></p>
+    </section>
 </body>
 </html>
-
-    
